@@ -18,8 +18,7 @@ Marathon Cheat Updated to 18.00
 # Features
     
 - Aimbot   
-- Memory Aim
-- Aimbone  
+- Memory Aim  
 - Smoothing
 - AimbotFOV
 - Player Skeleton
