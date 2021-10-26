@@ -14,7 +14,7 @@ namespace StaticOffsets {
 	uintptr_t WeaponData = 0x380;
 	uintptr_t LastFireTime = 0x9EC;
 	uintptr_t LastFireTimeVerified = 0x9F0;
-	uintptr_t LastFireAbilityTime = 0xC18;
+	uintptr_t LastFireAbilityTime = 0xC38;
 	uintptr_t CurrentWeapon = 0x610;
 	uintptr_t bADSWhileNotOnGround = 0x3AB1;
 
