@@ -1,6 +1,8 @@
 #pragma once
 #include <Windows.h>
 
+//Dev By SynixDev#1010 github.com/SynixDev Synix#1010
+
 namespace StaticOffsets {
 	uintptr_t OwningGameInstance = 0x188;
 	uintptr_t LocalPlayers = 0x38;
