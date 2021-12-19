@@ -842,7 +842,7 @@ VOID MenuAndDestroy(ImGuiWindow& window) {
 		ImGuiStyle* style = &ImGui::GetStyle();
 		static int maintabs = 0;
 		static int esptabs = 0;
-		if (ImGui::Begin(std::string(std::string(xorstr("Marathon Cheat"))).c_str(), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize)) {
+		if (ImGui::Begin(std::string(std::string(xorstr("Marathon Cheat Aka Inka Web Private Cheat"))).c_str(), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize)) {
 
 
 			ImGui::Tab(0, xorstr("Main"), &maintabs);//0
