@@ -440,13 +440,13 @@ namespace SDK
 		public:
 			static float GetFOVAngle(uintptr_t PlayerCameraManager)
 			{
-				auto GetFOVAngle = reinterpret_cast<float(*)(UINT64, char*)>(*(ULONG_PTR*)(*(ULONG_PTR*)PlayerCameraManager + 0x6D0));
+				auto GetFOVAngle = reinterpret_cast<float(*)(UINT64, char*)>(*(ULONG_PTR*)(*(ULONG_PTR*)PlayerCameraManager + 0x740));
 				return SpoofCall(GetFOVAngle, (ULONG_PTR)PlayerCameraManager, (char*)0);
 			}
 
 			static Vector3 GetCameraLocation(uintptr_t PlayerCameraManager)
 			{
-				auto GetCameraLocation = reinterpret_cast<Vector3(*)(UINT64, char*)>(*(ULONG_PTR*)(*(ULONG_PTR*)PlayerCameraManager + 0x718));
+				auto GetCameraLocation = reinterpret_cast<Vector3(*)(UINT64, char*)>(*(ULONG_PTR*)(*(ULONG_PTR*)PlayerCameraManager + 0x788));
 				return SpoofCall(GetCameraLocation, (ULONG_PTR)PlayerCameraManager, (char*)0);
 			}
 
@@ -455,19 +455,12 @@ namespace SDK
 				auto GetCameraRotation = reinterpret_cast<Vector3(*)(UINT64, char*)>(*(ULONG_PTR*)(*(ULONG_PTR*)PlayerCameraManager + 0x710));
 				return SpoofCall(GetCameraRotation, (ULONG_PTR)PlayerCameraManager, (char*)0);
 			}
-
 			
 			static BOOLEAN LineOfSightTo(PVOID PlayerController, PVOID Actor, Vector3* ViewPoint) {
 
 				auto LOSTo = reinterpret_cast<bool(__fastcall*)(PVOID PlayerController, PVOID Actor, Vector3 * ViewPoint)>(LineOfS);
 
 				return SpoofCall(LOSTo, PlayerController, Actor, ViewPoint);
-			}
-
-			static void FirstPerson(int h) {
-
-				auto ClientSetCameraMode = (*(void(__fastcall**)(uintptr_t Controller, int h))(*(uintptr_t*)PlayerController + 0x940));                
-				return SpoofCall(ClientSetCameraMode, (uintptr_t)PlayerController, h);
 			}
 			
 			static bool GetPlayerViewPoint(uintptr_t PlayerController, Vector3* vCameraPos, Vector3* vCameraRot)
@@ -480,7 +473,7 @@ namespace SDK
 					uintptr_t VTable = *(uintptr_t*)PlayerController;
 					if (!VTable)  return false;
 
-					pGetPlayerViewPoint = *(uintptr_t*)(VTable + 0x708);
+					pGetPlayerViewPoint = *(uintptr_t*)(VTable + 0x788);
 					if (!pGetPlayerViewPoint)  return false;
 				}
 
@@ -587,7 +580,7 @@ namespace SDK
 
 			static void SetControlRotation(Vector3 NewRotation, bool bResetCamera = false)
 			{
-				auto SetControlRotation_ = (*(void(__fastcall**)(uintptr_t Controller, Vector3 NewRotation, bool bResetCamera))(*(uintptr_t*)PlayerController + 0x688));
+				auto SetControlRotation_ = (*(void(__fastcall**)(uintptr_t Controller, Vector3 NewRotation, bool bResetCamera))(*(uintptr_t*)PlayerController + 0x6F8));
 				SpoofCall(SetControlRotation_, PlayerController, NewRotation, bResetCamera);
 			}
 		};
@@ -1025,7 +1018,7 @@ bool GetPlayerViewPoint(uintptr_t PlayerController, Vector3* vCameraPos, Vector3
 		uintptr_t VTable = *(uintptr_t*)PlayerController;
 		if (!VTable)  return false;
 
-		pGetPlayerViewPoint = *(uintptr_t*)(VTable + 0x708);
+		pGetPlayerViewPoint = *(uintptr_t*)(VTable + 0x788);
 		if (!pGetPlayerViewPoint)  return false;
 	}
 
@@ -1035,4 +1028,3 @@ bool GetPlayerViewPoint(uintptr_t PlayerController, Vector3* vCameraPos, Vector3
 
 	return true;
 }
-
