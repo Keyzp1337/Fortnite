@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-// dm me on discord for help Synix#1010
+// dm me on discord for help Keyzp#1337
 #pragma once
 #include <Windows.h>
 
@@ -34,4 +34,4 @@ namespace StaticOffsets {
 	uintptr_t Mesh = 0x280;
 	uintptr_t TeamIndex = 0xF28;
 }
-// dm me on discord for help Synix#1010
+// dm me on discord for help Keyzp#1337
