@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-// dm me on discord for help Keyzp#1337
+// dm me on discord for help  Keyzp#1337
 #pragma once
 #include <Windows.h>
 
