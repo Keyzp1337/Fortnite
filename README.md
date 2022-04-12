@@ -1,7 +1,7 @@
 # Fortnite-Internal
 
 
-
+Question/Help = Keyzp#1337
 
 - Esp
 - Aimbot
@@ -12,7 +12,7 @@
   - 1. create dll main which hooks present apon injection
   - 2. hook present from injector, write trampoline or change present call datr ptr to exported hook_main. (make sure to upadte orignal_present with present value so it cna call orignal funciton)
 
-Offset : https://fn.dumps.host/
-Question/Help = Keyzp#1337
+Offset : fn.dumps.host/
+
 
 
