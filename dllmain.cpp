@@ -1,4 +1,4 @@
-//github.com/Keyzp1337
+//github.com/Keyzp1337 - Keyzp#1337
 
 #include "SDK.h"
 #include "Loot.h"
